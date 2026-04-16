@@ -1,0 +1,69 @@
+import { addKeyword, utils} from '@builderbot/bot';
+import { join } from 'path'
+
+export const flowMapa = addKeyword([utils.setEvent('SAMPLES')])
+    .addAnswer([`*Ubicación de Areas, Secretarias y Aulas*`, `*OTERO 262*`], { media: join(process.cwd(), 'assets', 'mapa.jpg') })
+    .addAnswer([
+        `*Planta Baja:*`,
+        `Aula Magna, Aula 2 y Aula 5`,
+        `Decanato`,
+        `Despacho`,
+        `Dirección Alumnos`,
+        `Secretaría Extensión`,
+        `Secretaría Posgrado`,
+        `Sala Zurrueta`,
+        `Secretaría de Planificación y Area de Ambientción y Orientación Estudiantil`,
+        `Asuntos Estudiantiles`,
+        `Servicios Generales`
+], { media: join(process.cwd(), 'assets', 'planta baja.png') })
+    .addAnswer([
+        `*Primer Piso*`,
+        `Aula 7, 8, 9, 10 y 11`,
+        `Aula Informática `,
+        `Acreditación de Carreras`], { media: join(process.cwd(), 'assets', 'primer piso.png') })
+    .addAnswer([
+        `*Segundo Piso*`,
+        `Aula 17, 18, 19, 20, 21 y 22`,
+        `Gabinete 10, Sociología`,
+        `Dpto. Ciencia de la Salud`], { media: join(process.cwd(), 'assets', 'segundo piso.png') })
+    .addAnswer([
+        `*Tercer Piso*`,
+        `Aula 28, 29, 31 y 32`,
+        `Secretaría de Investigación`,
+        `Gabinete de Psicología Social`,
+        `Gabinete de Antropología`,
+        `Gabinete de Psicología`,
+        `Gabinete Ciencia de la Educación`,
+        `Gabinete de Lnegua`,
+        `Dirección Informática`
+    ], { media: join(process.cwd(), 'assets', 'tercer piso.png') })
+    .addAnswer([`*Ubicación de Areas, Secretarias y Aulas*`, `*OTERO 257*`], { media: join(process.cwd(), 'assets', 'otero257.jpeg') })
+    .addAnswer([
+        `*PLANTA BAJA*`,
+        `Radio`,
+        `Televisión`,
+        `Biblioteca\n`,
+        `*PRIMER PISO*`,
+        `Secretaría Administrativa`,
+        `Vecedecanato`,
+        `Subsecretaría de la Comunidad Egresada`,
+        `Unidad de Investigación, Cs. Cultura Proc. Soc. en Latinoamérica\n`,
+        `*SEGUNDO PISO*`,
+        `Doctorado`,
+        `Biblioteca Ernesto Max Aguero`,
+        `Aula 4 y 5`,
+        `Maestría en Ciencias Sociales`,
+        `Area de Género\n`,
+        `*TERCER PISO*`,
+        `Area de Filosofía`,
+        `Consejo Académico`,
+        `Aula 8`])
+
+    //.addAnswer(`Send video from URL`, {
+        //media: 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTJ0ZGdjd2syeXAwMjQ4aWdkcW04OWlqcXI3Ynh1ODkwZ25zZWZ1dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LCohAb657pSdHv0Q5h/giphy.mp4',
+    //})
+    //.addAnswer(`Send audio from URL`, { media: 'https://cdn.freesound.org/previews/728/728142_11861866-lq.mp3' })
+    //.addAnswer(`Send file from URL`, {
+        //media: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+    //})
+    .addAnswer(['📌 Escribí la palabra *Menú* para volver a las opciones de inicio.'])
