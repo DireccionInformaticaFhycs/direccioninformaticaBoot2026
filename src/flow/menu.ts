@@ -12,7 +12,7 @@ import { flowHorariosCarreras } from './horariosCarreras';
 export const flowPrincipal = addKeyword(['menu', 'Menú'])
     .addAnswer(
         [
-            '📌 Seleccioná las opciones que te interesan, elegí un número del *1 al 7*',
+            '📌 Seleccioná las opciones que te interesan, elegí un número del *1 al 8*',
             '🌐 Enlace FHyCS: https://www.fhycs.unju.edu.ar/',
             '🌐 Enlace Siu-Guarani: https://alumnos.unju.edu.ar/unju/',
             '*1* - 📝 Carrera de Grado.',
@@ -22,8 +22,8 @@ export const flowPrincipal = addKeyword(['menu', 'Menú'])
             '*5* - 🖥️ Ayuda para Trámites y Gestiones.',
             '*6* - 🗺 Ubicación de Áreas, Secretarias y Aulas.',
             '*7* - ❓ Preguntas  Frecuentes.',
-            '*8* - ✍ Ingreso *_2025_*',
-            '*9* - 🕒 Horarios de Cursada *_2025_*',
+            '*8* - ✍ Ingreso *_2026_*',
+            //'*9* - 🕒 Horarios de Cursada *_2026_*',
             
         ]
     .join(
@@ -31,7 +31,7 @@ export const flowPrincipal = addKeyword(['menu', 'Menú'])
     ),
     { capture: true },
     async(ctx, {gotoFlow, fallBack})=>{
-        if(!["1", "2", "3", "4","5", "6", "7", "8", "9"].includes(ctx.body)){
+        if(!["1", "2", "3", "4","5", "6", "7", "8"].includes(ctx.body)){
         return fallBack("🤔 Perdón no entendí tu mensaje, por favor seleccione un número del 1️⃣ al 8️⃣");
     }
     switch (ctx.body) {
@@ -43,7 +43,7 @@ export const flowPrincipal = addKeyword(['menu', 'Menú'])
         case "6": return gotoFlow(flowMapa);
         case "7": return gotoFlow(flowPreguntasFrec);
         case "8": return gotoFlow(flowIngreso);
-        case "9": return gotoFlow(flowHorariosCarreras);
+        //case "9": return gotoFlow(flowHorariosCarreras);
     }
 }
 )

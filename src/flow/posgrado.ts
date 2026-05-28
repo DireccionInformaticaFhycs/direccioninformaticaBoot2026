@@ -11,6 +11,7 @@ import { flowEspEcoPopuProcCom } from './posgrado/8EspEcoPopuProcCom';
 import { flowEspDocSup } from './posgrado/9EspDocSup';
 import { flowMaesTeoMetCieSoc } from './posgrado/10MaesTeoMetCieSoc';
 import { flowMaeEstLitFront } from './posgrado/11MaeEstLitFront';
+import { flowEspecializacionEnEducacionPromocionDeLaSalud } from './posgrado/12EspecializacionEnEducacionPromocionDeLaSalud';
 
 export const flowPosgrado = addKeyword(['posgrado', 'pos']).addAnswer(
     [
@@ -26,6 +27,7 @@ export const flowPosgrado = addKeyword(['posgrado', 'pos']).addAnswer(
         '📄9 Especialización en Docencia Superior',
         '📄10 Maestría en Teoría y Metodología de las Ciencias Sociales',
         '📄11 Maestría en Estudios Literarios de Frontera',
+        '📄12 Especialización en Educación y Promoción de la Salud',
       
         'Para más info, visitanos en: https://www.fhycs.unju.edu.ar/ingreso/index.html',
         '\n*Escriba un número* para ver el plan de estudio de esa materia.',
@@ -35,8 +37,8 @@ export const flowPosgrado = addKeyword(['posgrado', 'pos']).addAnswer(
     ),
     {capture: true},
     async(ctx, {gotoFlow, fallBack, flowDynamic})=>{
-        if(!["1", "2", "3", "4","5", "6", "7", "8", "9", "10","11", "Menu"].includes(ctx.body)){
-        return fallBack("🤔 Perdón no entendí tu mensaje, por favor seleccione un número del 1️⃣ al 1️⃣1️⃣ o Escribí *Menú* para volver a las opciones de inicio.");
+        if(!["1", "2", "3", "4","5", "6", "7", "8", "9", "10","11", "12", "Menu"].includes(ctx.body)){
+        return fallBack("🤔 Perdón no entendí tu mensaje, por favor seleccione un número del 1️⃣ al 1️⃣2️⃣ o Escribí *Menú* para volver a las opciones de inicio.");
     }
     switch (ctx.body) {
         case "1": return gotoFlow(flowEspEstdeGeneroyPolíticasPublicas);
@@ -50,6 +52,7 @@ export const flowPosgrado = addKeyword(['posgrado', 'pos']).addAnswer(
         case "9": return gotoFlow(flowEspDocSup);
         case "10": return gotoFlow(flowMaesTeoMetCieSoc);
         case "11": return gotoFlow(flowMaeEstLitFront);
+        case "12": return gotoFlow(flowEspecializacionEnEducacionPromocionDeLaSalud);
         case "Menu": return gotoFlow(flowPrincipal);
     }
 }
