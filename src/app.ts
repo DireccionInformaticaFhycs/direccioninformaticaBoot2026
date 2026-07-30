@@ -9,7 +9,7 @@ const PORT = process.env.PORT ?? 3008
 const main = async () => {
     
     const adapterProvider = createProvider(Provider,
-        {version:[2,3000,1033916097] as any}
+        {version:[2,3000,1043065146] as any}
     )
     const adapterDB = new Database()
 
